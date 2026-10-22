@@ -86,8 +86,8 @@ $('#roomCode').value=currentRoom; $('#studentName').value=currentName; $('#supab
 function updateStats(){ $('#statFound').textContent=papers.length?papers.length.toLocaleString('es-CO'):'—';$('#statSaved').textContent=collection.length;$('#statScore').textContent=score;$('#statRoom').textContent=sbUrl&&sbKey?'CONFIGURADO':'SIN CONECTAR'; }
 function message(el,text,kind=''){el.innerHTML=`<div class="notice ${kind}" style="margin-top:10px">${text}</div>`}
 function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-$('.nav').forEach(b=>b.addEventListener('click',()=>{ $('.nav').forEach(n=>n.classList.toggle('active',n===b));$('.view').forEach(v=>v.classList.toggle('active',v.id===b.dataset.view));if(b.dataset.view==='coleccion'){renderCollection();loadSharedCollection()}if(b.dataset.view==='ranking')loadRanking()}));
-function openView(id){$$('.nav').forEach(n=>n.classList.toggle('active',n.dataset.view===id));$$('.view').forEach(v=>v.classList.toggle('active',v.id===id))}
+$$('.nav').forEach(b=>b.addEventListener('click',()=>{ $$('.nav').forEach(n=>n.classList.toggle('active',n===b));$('.view').forEach(v=>v.classList.toggle('active',v.id===b.dataset.view));if(b.dataset.view==='coleccion'){renderCollection();loadSharedCollection()}if(b.dataset.view==='ranking')loadRanking()}));
+function openView(id){$$$('.nav').forEach(n=>n.classList.toggle('active',n.dataset.view===id));$$('.view').forEach(v=>v.classList.toggle('active',v.id===id))}
 async function searchWorks(loadMore=false){
  query=$('#searchQuery').value.trim();if(!query){$('#searchStatus').textContent='Escribe un tema para buscar';return}
  const year=$('#yearFilter').value;$('#searchStatus').textContent='Consultando OpenAlex…';$('#searchBtn').disabled=true;
