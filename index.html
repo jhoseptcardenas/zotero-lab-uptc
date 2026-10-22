@@ -79,8 +79,8 @@ let papers=[], collection=JSON.parse(localStorage.getItem('zl_collection')||'[]'
 // Para que todos los dispositivos usen el mismo backend, el docente puede completar
 // estas dos constantes con la URL y la clave PUBLICA del proyecto antes de publicar.
 // Nunca pegar aquí una clave secreta/service_role.
-const PUBLIC_SUPABASE_URL = "";
-const PUBLIC_SUPABASE_KEY = "";
+const PUBLIC_SUPABASE_URL = "https://hhzzojdubtxzynnnahebu.supabase.co";
+const PUBLIC_SUPABASE_KEY = "sb_publishable_eXIllTjdwv2O07NSqjk1Kg_KCbHiERT";
 let sbUrl=PUBLIC_SUPABASE_URL||localStorage.getItem('zl_sb_url')||'', sbKey=PUBLIC_SUPABASE_KEY||localStorage.getItem('zl_sb_key')||'', currentRoom=localStorage.getItem('zl_room')||'', currentName=localStorage.getItem('zl_name')||'';
 $('#roomCode').value=currentRoom; $('#studentName').value=currentName; $('#supabaseUrl').value=sbUrl; $('#supabaseKey').value=sbKey;
 function updateStats(){ $('#statFound').textContent=papers.length?papers.length.toLocaleString('es-CO'):'—';$('#statSaved').textContent=collection.length;$('#statScore').textContent=score;$('#statRoom').textContent=sbUrl&&sbKey?'CONFIGURADO':'SIN CONECTAR'; }
